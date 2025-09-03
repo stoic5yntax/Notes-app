@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js" type="module"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <a href="index.html" class="header__logo">Notes App</a>
+    </header>
+
+    <!-- MAIN -->
+    <main class="app">
+      <section class="app__form" aria-label="Add a new note">
+        <h2 class="app__form-title">Add a New Note</h2>
+        <form id="noteForm" class="form">
+          <div class="form__group">
+            <label for="noteTitle" class="form__label">Title</label>
+            <input
+              type="text"
+              id="noteTitle"
+              name="title"
+              class="form__input"
+              placeholder="Enter note title..."
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <label for="noteContent" class="form__label">Content</label>
+            <textarea
+              id="noteContent"
+              name="content"
+              class="form__textarea"
+              rows="6"
+              placeholder="Write your note..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form__group">
+            <label for="noteType" class="form__label">Type</label>
+            <select id="noteType" name="type" class="form__select" required>
+              <option value="">Choose type...</option>
+              <option value="personal">Personal</option>
+              <option value="work">Work</option>
+              <option value="study">Study</option>
+              <option value="idea">Idea</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <button type="submit" class="form__btn">Add Note</button>
+        </form>
+      </section>
+
+      <!-- Notes List -->
+      <section
+        class="app__notes"
+        id="notes-container"
+        aria-label="Saved notes"
+      ></section>
+    </main>
+
+    <!-- Modal for full note view -->
+    <div class="modal" id="note-modal">
+      <div class="modal__content">
+        <button class="modal__close" aria-label="Close">&times;</button>
+        <h3 class="modal__title"></h3>
+        <div class="modal__details">
+          <small class="modal__timestamp"></small>
+          <span class="modal__type"></span>
+        </div>
+        <p class="modal__body"></p>
+      </div>
+    </div>
+  </body>
+</html>
